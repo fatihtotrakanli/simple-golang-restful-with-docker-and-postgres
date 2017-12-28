@@ -1,10 +1,24 @@
 # Description
 
-This project is a *Go language* learning project with simple RestFul services. It uses postgres db inside with DockerFile. You can get image with dockerfile or create your own postgres database without it. 
+This project is a *Go language* learning project with simple RestFul services. It uses postgres db inside with docker-compose. You can compose with dockerfile or create your own postgres database without it. 
 
-For DockerFile help, you can review the following link.
+For run docker-compose, you need to write following commands. In your project folder,
 
-[Dockerize Postgres](https://docs.docker.com/engine/examples/postgresql_service/)
+```
+      cd docker
+      docker-compose up
+```
+
+then PostgreSQL works on 32300 Port (32300 -> 5432). You can access with database IDE (DataGrip, Intellij etc.) with configure port 32300.
+
+If you want to conncect from your host system type the following command to terminal.
+```
+      psql -h localhost -p 32300 -d docker -U docker --password
+```
+
+For more information about it,
+
+[Dockerize PostgreSQL](https://docs.docker.com/engine/examples/postgresql_service/#connecting-from-your-host-system)
 
 # Database table configuration
 ```
